@@ -1,14 +1,22 @@
+//This file is to demonstrate java flows and control in terms of if else statments and various loops. 
+
 import java.util.Scanner;
 import java.util.Arrays;
 
+// Class
 class Compare
 {
+	
+	//Main method
 public static void main (String args[])
 {
+	
+// Scanner to allow for user input
 Scanner scan = new Scanner(System.in);
 
 System.out.print("\nEnter a number: ");
 
+	// User input
 int first = scan.nextInt();
 
 System.out.print("\nEnter another number: ");
@@ -19,12 +27,18 @@ System.out.print("\nEnter a final number: ");
 
 int third = scan.nextInt();
 
+	// Give variables to method
 findSmallest(first,second,third);
 
 }
 
+	// findSmallest method
 static void findSmallest(int first,int second, int third)
 {
+	
+	/* If statement that translates to: If the first number is less than or equal to the second and the first is less than or equal to the third,
+	the first number is the smallest */
+	
     if(first<=second && first<=third){
         System.out.println(first +" \nis the smallest number.");
 
@@ -42,18 +56,27 @@ static void findSmallest(int first,int second, int third)
 }
 
 
+// Class to sort three numbers using arrays and loops 
 class Sort
 {
   public static void main(String[] args)
 
   {
 
+	  // Array of three numbers
 int[] order = new int[3];
 
 System.out.print("\nEnter three numbers: ");
 
+	  //Ask for user input
   Scanner scan = new Scanner(System.in);
+	  
+	  // For loop that will loop through the values in the array. 
+	  
   for(int i=0; i<3; i++) order[i] = scan.nextInt();
+	  
+	  // Arrays.sort to sort the numbers from smallest to biggest
+	  
   Arrays.sort(order);
   System.out.print("\nOrder: ");
     for(int i=0; i<3; i++) System.out.print(order[i]+" ");
@@ -61,6 +84,7 @@ System.out.print("\nEnter three numbers: ");
 
 }
 
+// This block of code uses a switch statement to loop through values until it finds the one a user has inputted. 
 class Month
 {
     	public static void main( String[] args )
@@ -115,7 +139,7 @@ class Month
 
 }
 
-
+// This block of code will 
 class Even
 {
   public static void main( String[] args )
@@ -135,29 +159,41 @@ class Even
 
 }
 
+/* This class will provide the user with a menu option. It will keep asking for user input until the user presses 0 to exit. 
+Asking for user input is done via a while loop where a switch statement is able to loop through the cases until it finds the
+number the user has entered. The user can choose from a number of different conversions
+*/
+
 class Menu
 {
 
+	// Main method and scanner for user input. 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("\nPlease choose from the menu:");
 
-
+//While loop to display menu options. 
 	while(true){
-			System.out.println("\n1. Fahrenheit to Celsius ");
-			System.out.println("\n2. Celsius to Fahrenheit");
-      System.out.println("\n3. Inches to centimetres");
-      System.out.println("\n4. Centimetres to inches");
-      System.out.println("\n5. Pounds to Kilograms");
-      System.out.println("\n6. Kilograms to Pounds");
-			System.out.println("\nTo Exit, Press 0");
+		
+	System.out.println("\n1. Fahrenheit to Celsius ");
+	System.out.println("\n2. Celsius to Fahrenheit");
+      	System.out.println("\n3. Inches to centimetres");
+     	System.out.println("\n4. Centimetres to inches");
+     	System.out.println("\n5. Pounds to Kilograms");
+      	System.out.println("\n6. Kilograms to Pounds");
+	System.out.println("\nTo Exit, Press 0");
 
 			System.out.println("\nEnter the number of the converter you want:");
 			int menu = scan.nextInt();
-
-			switch(menu){
+		
+// Switch statement to loop through cases until it finds the one that matches the user input. 
+	switch(menu){
 
 case 1:
+	System.out.println("\nEnter Fahrenehit: ");
+	double fah = scan.nextDouble();
+	double formula = fah-32;
+	System.out.println("\nCelsius: " + formula * 5/9);
 
     break;
 
@@ -166,7 +202,7 @@ case 2:
         double cel = scan.nextDouble();
         double formulaC = cel * 9/5;
         System.out.println("\nFahrenehit: " + formulaC + 32);
-		break;
+	break;
 
 case 3:
         System.out.println("\nEnter inches: ");
@@ -196,6 +232,7 @@ case 6:
         System.out.println("\nPounds: " + kg * convert);
     break;
 
+// User will press 0 to break out of the loop and to end the program. 
 	case 0:
 
       System.out.println("\nThank you! Goodbye!");
