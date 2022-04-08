@@ -1,4 +1,5 @@
-
+/* This is a simple calculator that will ask the user for three numbers and it will display their sum, product and average. 
+	Then it will display the current sum, product and average after each number is added. */
 
 import java.util.Scanner;
 class Calculator
